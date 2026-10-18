@@ -40,7 +40,7 @@ Outlier Detection: Used boxplots to identify extreme values in Ride_Distance and
 
 (Tip: You can embed 1-2 Python Matplotlib/Seaborn charts here as screenshots in your README to make it look even better).
 
-📊 Power BI Dashboard Sections
+# Power BI Dashboard Sections
 The interactive Power BI report is divided into 5 main sections based on the stakeholder needs:
 
 Overall Dashboard: Total Bookings, Total Booking Value, Ride Volume over time, and Booking Status breakdown.
