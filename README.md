@@ -1,5 +1,8 @@
 # Ola Ride Booking Data Analysis | Python, SQL & Power BI
 
+#
+[🎯 REPORT](https://github.com/abhinavkumar1268b/Ola_Analysis/blob/main/Report_Updated.docx)
+
 An end-to-end data analytics project focused on understanding ride-booking performance, revenue trends, customer retention, and operational inefficiencies using Python, MySQL, and Power BI.
 
 ## Project Overview
