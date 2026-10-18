@@ -1,113 +1,174 @@
-# Ola Ride Data Analysis | Python EDA, SQL & Power BI Project
+# Ola Ride Booking Data Analysis | Python, SQL & Power BI
 
+An end-to-end data analytics project focused on understanding ride-booking performance, revenue trends, customer retention, and operational inefficiencies using Python, MySQL, and Power BI.
 
-# Project Overview
-This project is an end-to-end data analysis of Ola's ride-booking dataset. The primary goal is to uncover key operational bottlenecks, analyze revenue trends, understand customer behavior, and provide actionable business recommendations to increase sales, improve profit margins, and reduce cancellations.
+## Project Overview
 
-The project follows a complete data pipeline:
+This project analyzes Ola's ride-booking data to identify business trends, uncover operational bottlenecks, and generate actionable insights to improve booking success, customer retention, and revenue performance.
 
-Python (EDA): Data cleaning, handling missing values, outlier detection, and statistical exploration.
+The analysis follows an end-to-end data pipeline, combining exploratory data analysis, SQL-based business intelligence, and interactive Power BI dashboards.
 
-SQL (MySQL): Deep-dive data extraction and answering specific business KPIs.
+**Key objectives:**
+- Analyze booking performance and cancellation patterns.
+- Identify revenue trends across vehicle types and payment methods.
+- Understand customer booking frequency and retention.
+- Evaluate ride demand across different hours of the day.
+- Develop data-driven recommendations to improve business performance.
 
-Power BI: Creating interactive dashboards for stakeholders to visualize the insights.
+## Tech Stack
 
-# Tech Stack
-Programming Language: Python
+| Category | Tools & Technologies |
+|---|---|
+| Programming | Python |
+| Data Analysis | Pandas, NumPy |
+| Data Visualization | Matplotlib, Seaborn, Power BI |
+| Database | MySQL, MySQL Workbench |
+| Data Processing | Microsoft Excel |
+| Environment | Jupyter Notebook |
 
-Python Libraries: Pandas, NumPy, Matplotlib, Seaborn
+## Project Workflow
 
-Database: MySQL (Workbench)
+**1. Python — Exploratory Data Analysis (EDA)**
 
-Data Visualization: Power BI
+Performed data cleaning, statistical analysis, and exploratory visualization to understand the dataset and identify patterns.
 
-Data Processing: Microsoft Excel
+- Cleaned missing values in cancellation, rating, and incomplete-ride fields.
+- Converted date and time columns into appropriate formats for time-based analysis.
+- Conducted univariate and bivariate analysis of booking values, ride distances, vehicle types, and booking statuses.
+- Examined rating distributions and relationships between customer and driver ratings.
+- Used boxplots and statistical techniques to investigate outliers in ride distance and booking value.
 
-Environment: Jupyter Notebook
+**2. MySQL — Business Intelligence & KPI Analysis**
 
-# Python Exploratory Data Analysis (EDA)
-The Python EDA phase focused on understanding the data structure and preparing it for further analysis. Key steps included:
+Developed **20 SQL queries** to answer business-focused questions and extract actionable insights.
 
-Data Cleaning: Handled NA values in columns like Canceled_Rides_by_Customer, Driver_Ratings, and Incomplete_Rides_Reason.
+Analysis included:
+- Booking success and cancellation rates.
+- Revenue and ride-distance performance by vehicle type.
+- Customer booking frequency and repeat-ride behavior.
+- Driver and customer cancellation reasons.
+- Payment-method distribution and peak demand periods.
+- Customer ratings and operational performance.
 
-Data Type Conversion: Converted Date and Time columns into appropriate datetime formats for time-series analysis.
+**3. Power BI — Interactive Dashboards**
 
-Univariate & Bivariate Analysis: Plotted distributions of Booking_Value, Ride_Distance, and compared Vehicle_Type with Booking_Status.
+Designed a multi-page Power BI report to communicate business performance through KPIs, visualizations, and interactive analysis.
 
-Correlation Analysis: Checked correlations between Driver_Ratings and Customer_Ratings using heatmaps.
+| Dashboard | Key Metrics & Analysis |
+|---|---|
+| Overall Performance | Total bookings, booking value, ride volume trends, booking status |
+| Vehicle Performance | Revenue and ride distance by vehicle type |
+| Revenue Analysis | Payment methods, top customers, daily ride distance |
+| Cancellation Analysis | Customer and driver cancellations, cancellation reasons |
+| Ratings Analysis | Driver and customer ratings across vehicle types |
 
-Outlier Detection: Used boxplots to identify extreme values in Ride_Distance and Booking_Value.
+## Key Business Insights
 
-(Tip: You can embed 1-2 Python Matplotlib/Seaborn charts here as screenshots in your README to make it look even better).
+The analysis revealed several important patterns in booking performance, customer behavior, and operational efficiency.
 
-# Power BI Dashboard Sections
-The interactive Power BI report is divided into 5 main sections based on the stakeholder needs:
+### 1. Booking Success & Operational Bottlenecks
 
-Overall Dashboard: Total Bookings, Total Booking Value, Ride Volume over time, and Booking Status breakdown.
+- **62.19% booking success rate** — approximately 42,948 successful bookings.
+- **17.87% driver cancellation rate** — approximately 12,338 bookings.
+- **10.14% customer cancellation rate** — approximately 6,999 bookings.
+- Driver-side cancellations and driver-not-found outcomes together account for approximately **28% of booking outcomes**, highlighting a major operational challenge.
 
-Vehicle Type Dashboard: Top vehicle types by ride distance and revenue.
+### 2. Driver Cancellation Analysis
 
-Revenue Dashboard: Revenue by payment method, Top 5 customers by booking value, and daily ride distance.
+- **4,311 cancellations** were attributed to personal and car-related issues, the leading reported driver cancellation cause.
+- Customer-related issues were another important cancellation category.
 
-Cancellation Dashboard: Detailed breakdown of cancelled rides by customers and drivers, along with specific reasons.
+These findings suggest opportunities to improve driver support, vehicle readiness, and booking reliability.
 
-Ratings Dashboard: Distribution of driver and customer ratings across different vehicle types.
+### 3. Customer Retention & Repeat Bookings
 
-# Key Data Insights (Calculated)
-Based on the combined analysis of Python, SQL, and Power BI, here are the critical findings:
+- Approximately **97.6% of customers booked only once** in the analyzed dataset.
+- Around **961 customers** made a second booking.
+- Only **20 customers** reached three bookings.
 
-Booking Success & Cancellations: Out of all bookings, 62.19% were successful. However, 17.87% were cancelled by drivers, and 10.14% by customers. Driver-side issues (cancellations + not found) account for nearly 28% of all booking outcomes.
+The low repeat-booking rate highlights a potential customer retention challenge and an opportunity to encourage second and subsequent rides.
 
-Driver Cancellation Causes: The leading cause for driver cancellations is "Personal & Car related issues" (4,311 cases), followed by "Customer related issues", indicating a need for better driver support and vehicle maintenance.
+### 4. Payment Preferences
 
-Customer Retention is Low: A staggering 97.6% of customers have booked a ride only once. Only ~961 customers made a second booking, and just 20 customers reached 3 bookings.
+- **Cash: 54.57%**
+- **UPI: 40.61%**
 
-Payment Preferences: Cash is still the dominant payment method (54.57%), closely followed by UPI at 40.61%.
+Cash remains the leading payment method, while UPI already represents a substantial share of transactions.
 
-Peak Booking Hours: The highest ride demand occurs at 8:00 AM (2,956 bookings) and 9:00 PM (2,941 bookings), aligning with standard office commute hours.
+### 5. Peak Booking Hours
 
-Vehicle Performance: Prime Sedan generates the highest revenue (₹3.48M). Auto rides are primarily used for short distances (avg 10.06 km) compared to cabs/bikes (avg 24-25 km).
+| Time | Bookings |
+|---|---:|
+| 8:00 AM | **2,956** |
+| 9:00 PM | **2,941** |
 
-# Strategic Business Recommendations (To Increase Sales & Profit)
-Based on the data insights, the following discount and offer strategies are recommended:
+The observed demand peaks suggest opportunities to improve driver availability and service reliability during morning and evening travel periods.
 
-"Second Ride" Discount (Retention Strategy): To tackle the 97.6% single-booking rate, Ola should send an automated "Next Ride 20% OFF" coupon immediately after a user's first successful ride. This reduces Customer Acquisition Cost (CAC) and increases Lifetime Value (LTV).
+### 6. Vehicle Performance & Revenue
 
-UPI Cashback Campaign (Payment Optimization): Since 54.57% of rides are paid in Cash, Ola should offer a 2-5% cashback (in Ola Money) specifically for UPI payments. This reduces cash-handling logistics costs and locks the customer into the Ola ecosystem.
+- **Prime Sedan generated approximately ₹3.48 million (₹34.8 lakh)** in booking value, making it the highest-revenue vehicle category in the analysis.
+- Auto rides had an average ride distance of approximately **10.06 km**, compared with around **24–25 km** for the referenced cab and bike categories.
 
-"Micro-Commute" Pass for Auto Riders: Since Auto rides have a low average distance (10 km), introduce a "Daily Commuter Pass" for Auto users (e.g., Buy 5 short rides for a discounted price). This will increase daily ride volume and driver utilization.
+These differences highlight distinct usage patterns across vehicle categories and opportunities for targeted service offerings.
 
-Peak Hour "Surge Lock" Subscriptions: For high-frequency corporate users, offer a ₹99/month subscription for flat ₹30 off on rides between 8 AM - 10 AM. This locks in revenue during the highest-demand hours.
+## Strategic Business Recommendations
 
-Premium Win-Back Vouchers: Data shows cancelled rides have a slightly higher average value (₹555) than successful rides (₹547). Send targeted win-back vouchers to users who cancelled high-value Premium rides to recover lost top-line revenue.
+The following recommendations translate the observed data patterns into potential business initiatives. Their actual impact should be validated through controlled experiments and profitability analysis.
 
- Repository Structure
-Ola_EDA.ipynb - Jupyter Notebook containing the Python code for data cleaning, EDA, and visualizations.
+| Business Challenge | Proposed Strategy | Expected Benefit |
+|---|---|---|
+| Low repeat bookings | Offer a targeted second-ride incentive after a customer's first successful trip | Improve repeat bookings and customer lifetime value |
+| High cash usage | Test UPI cashback or digital-payment incentives | Encourage digital payments and potentially reduce cash-handling costs |
+| Short-distance Auto usage | Pilot a commuter pass for frequent short-distance Auto riders | Encourage repeat usage and improve driver utilization |
+| Peak-hour demand | Test targeted peak-hour offers for eligible frequent riders | Strengthen customer loyalty during high-demand periods |
+| Cancelled high-value rides | Test personalized recovery offers after eligible cancelled bookings | Recover some lost demand and improve booking completion |
 
-Ola_Data_Analysis.sql - Contains all 20 SQL queries used for data extraction and KPI generation.
+**Recommendation note:** Discounts, cashback, and subscriptions are proposed strategies—not measured project outcomes. Their commercial viability depends on incentive costs, contribution margin, customer response, and operational capacity.
 
-Ola_Project_Report.pdf - The complete detailed project report with SQL outputs and Power BI screenshots.
+## Repository Structure
 
-Ola_Dataset.csv - The raw dataset used for this project.
+```text
+Ola-Ride-Data-Analysis/
+│
+├── Ola_EDA.ipynb
+│   └── Python data cleaning, EDA, and visualizations
+│
+├── Ola_Data_Analysis.sql
+│   └── 20 SQL queries for business KPI analysis
+│
+├── Ola_Project_Report.pdf
+│   └── Detailed project report, SQL results, and Power BI screenshots
+│
+├── Ola_Dataset.csv
+│   └── Raw ride-booking dataset
+│
+└── README.md
+    └── Project documentation
+```
 
-README.md - Project documentation.
+## Data Dictionary
 
-# Data Dictionary (Key Columns)
-Booking_ID: Unique identifier for each ride.
+| Column | Description |
+|---|---|
+| `Booking_ID` | Unique identifier for each ride booking |
+| `Booking_Status` | Booking outcome, such as successful, cancelled, or driver not found |
+| `Vehicle_Type` | Category of vehicle booked |
+| `Booking_Value` | Recorded booking fare or value |
+| `Payment_Method` | Payment method used for the booking |
+| `Ride_Distance` | Recorded ride distance |
+| `Driver_Ratings` | Rating provided to the driver |
+| `Customer_Rating` | Customer-related rating recorded in the dataset |
 
-Booking_Status: Current state of the ride (Success, Canceled by Driver, Canceled by Customer, Driver Not Found).
+## Project Deliverables
 
-Vehicle_Type: Type of vehicle booked (Prime Sedan, Mini, Auto, Bike, etc.).
+- Python notebook for data preparation and exploratory analysis.
+- MySQL queries for business KPI extraction.
+- Interactive Power BI dashboards for stakeholder analysis.
+- Detailed project report containing analytical outputs and dashboard screenshots.
 
-Booking_Value: Total fare generated by the ride.
+## Author
 
-Payment_Method: Mode of payment (Cash, UPI, Credit Card, etc.).
+**Abhinav Kumar**
 
-Ride_Distance: Total distance covered in the ride.
+[LinkedIn](https://www.linkedin.com/in/abhinav-kumar-33ak)
 
-Driver_Ratings & Customer_Rating: Feedback ratings provided by both parties.
-
-
-
-Author: Abhinav Kumar
-Connect with me: [https://www.linkedin.com/in/abhinav-kumar-33ak]
